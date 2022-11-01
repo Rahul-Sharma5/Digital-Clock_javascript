@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@500&family=Josefin+Sans:wght@200;300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Rubik:wght@500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body, .time, .left-side, .right-side, .right-top, .right-down, .calendar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.digital-clock, .time, .right-side, .right-top, .right-down, .calendar{
+    position: relative;
+}
+body{
+    min-height: 100vh;
+    background: #2e2e45;
+}
+
+.digital-clock {
+    color: #fff;
+    background: #2d2f38;
+    width: 425px;
+    padding: 20px 45px;
+    border-radius: 10px;
+}
+
+.digital-clock::before{
+    content: '';
+    position: absolute;
+    background: linear-gradient(45deg, blue, orange, green, rgb(234, 68, 95), red);
+    background-size: 200% 200%;
+    top: -5px;
+    left: -5px;
+    bottom: -5px;
+    right: -5px;
+    z-index: -1;
+    filter: blur(30px);
+    animation: glowing 5s ease infinite;
+}
+
+@keyframes glowing{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+#hours{
+    font-weight: 600;
+    padding: 0 10px;
+    line-height: 125px;
+    font-size: 8rem;
+    background: -webkit-linear-gradient(90deg, blue, white);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.right-side{
+    flex-direction: column;
+}
+
+#dots{
+    font-size: 4rem;
+    transform: translateY(-3px);
+    color: gray;
+}
+
+#minutes{
+    font-size: 5rem;
+    font-weight: 500;
+    margin-left: 10px;
+    transform: translateY(10px);
+    background: -webkit-linear-gradient(90deg, orchid, white);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.right-down{
+    margin-left: 10px;
+    transform: translateY(-25px);
+}
+
+#period, #seconds{
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+#period{
+    color: orange;
+}
+
+#seconds{
+    color: #fff;
+}
+
+.calendar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    background: -webkit-linear-gradient(90deg, rgb(118, 58, 223), white);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.day-name, .day-number, .year{
+    margin-left: 8px;
+}
